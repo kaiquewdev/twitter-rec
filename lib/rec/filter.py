@@ -14,8 +14,8 @@ def frequency( text='' ):
             # revert sequence
             frequency_values = frequency_values[::-1]
 
-            for value in frequency_values:
-                for k,v in frequency.iteritems():
+            for k,v in frequency.iteritems():
+                for value in frequency_values:
                     if v == value:
                         output[k] = value
 
