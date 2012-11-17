@@ -18,6 +18,6 @@ Installation
 Example
 =======
     
-    python lib/example.py
+    python lib/example.py [user] [query]
 
 Note: Work in progress.
