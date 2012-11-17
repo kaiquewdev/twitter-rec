@@ -1,5 +1,3 @@
 __name__ = 'rec'
 
-import filter
-import text
-import stack
+from rec import Rec as rec

@@ -1,5 +1,7 @@
 import unittest
-import filter
+from filter import Filter
+
+filter = Filter()
 
 class FilterTestSuite( unittest.TestCase ):
     def setUp( self ):

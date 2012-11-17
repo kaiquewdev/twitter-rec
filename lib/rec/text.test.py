@@ -1,6 +1,9 @@
 import unittest
-import filter
-import text 
+from filter import Filter
+from text import Text
+
+filter = Filter()
+text = Text()
 
 class TextTestSuite( unittest.TestCase ):
     def setUp( self ):

@@ -1,6 +1,9 @@
 import unittest
-import stack 
-import filter
+from stack import Stack
+from filter import Filter
+
+stack = Stack()
+filter = Filter()
 
 class StackTestSuite( unittest.TestCase ):
     def setUp( self ):
