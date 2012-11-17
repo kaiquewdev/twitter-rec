@@ -1,5 +1,9 @@
 # coding: utf-8
 
+import StringIO
+
+from string import join
+
 from text import Text
 
 class Stack( object ):
@@ -30,6 +34,17 @@ class Stack( object ):
                 )
 
                 output = stack[ flid ]
+
+            return output
+        except Exception:
+            return output
+
+    def buffer( self, stack=[] ):
+        output = StringIO.StringIO()
+
+        try:
+            if stack:
+                output.write( join( stack, '\n' ) )
 
             return output
         except Exception:

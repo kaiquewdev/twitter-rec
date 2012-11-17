@@ -35,5 +35,37 @@ class StackTestSuite( unittest.TestCase ):
             self.case[0]['result']
         )   
 
+    def test_stack_of_text_buffer( self ):
+        import StringIO
+        from string import join
+
+        assertion_buffer = StringIO.StringIO()
+        assertion_buffer.write( 
+            join(
+                self.case[0],
+                '\n'
+            ) 
+        )
+        
+        self.assertEqual(
+            stack.buffer(
+                self.case[0]['stack']
+            ).__module__,
+            'StringIO' 
+        )
+
+        self.assertEqual(
+            str(
+                type(
+                    stack.buffer(
+                        self.case[0]['stack']
+                    )
+                )
+            ),
+            '<type \'instance\'>' 
+        )
+
+        assertion_buffer.close()
+
 if __name__ == '__main__':
     unittest.main()
