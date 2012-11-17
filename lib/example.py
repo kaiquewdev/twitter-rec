@@ -2,13 +2,15 @@
 # Example of rec
 
 import sys
-import rec
 import requests
 import StringIO
 
+from rec import Rec
 from string import join
 
 def main():
+    rec = Rec()
+
     favorites_url = 'https://api.twitter.com/1/favorites.json?count=10&screen_name={0}'.format( sys.argv[1] )
     favorites = requests.get( favorites_url )
 
