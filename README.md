@@ -1,9 +1,7 @@
 Twitter Rec.
 ============
 
-Rec Twitter is a tool for you to analyze and recommend 
-
-texts according to patterns found in other texts your timeline.
+is a lib for analyzing some standards and recommend new contents according to the patterns found. Using the favorites of your Twitter account, and recommending new through a search for a keyword.
 
 Virtual Env ( optional )
 =======================
