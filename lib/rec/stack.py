@@ -49,3 +49,25 @@ class Stack( object ):
             return output
         except Exception:
             return output
+
+    def slice( self, stack=[], base=2 ):
+        output = []
+
+        try:
+            if stack:
+                c = base
+                block = []
+
+                for sid in range( len( stack ) ):
+                    item = stack[ sid ] 
+                    block.append( item )
+                    c -= 1
+
+                    if c == 0 or sid == ( len( stack ) - 1 ):
+                        output.append( block )
+                        c = base
+                        block = []
+
+            return output
+        except Exception:
+            return output

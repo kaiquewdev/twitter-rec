@@ -67,5 +67,29 @@ class StackTestSuite( unittest.TestCase ):
 
         assertion_buffer.close()
 
+    def test_stack_slice( self ):
+        self.assertEqual(
+            stack.slice([
+                '#number1',
+                '#number2',
+                '#number3',
+                '#number4',
+            ]), [
+                ['#number1', '#number2'],
+                ['#number3', '#number4'],
+            ]
+        )
+
+        self.assertEqual(
+            stack.slice([
+                '#number1',
+                '#number2',
+                '#number3',
+            ]), [
+                ['#number1', '#number2'],
+                ['#number3'],
+            ]
+        )
+
 if __name__ == '__main__':
     unittest.main()
