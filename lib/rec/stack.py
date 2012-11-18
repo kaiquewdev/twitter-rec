@@ -77,7 +77,6 @@ class Stack( object ):
 
         try:
             if frequency and stack:
-                import pdb; pdb.set_trace()
                 stack = self.slice(stack)
 
                 for slot in stack:

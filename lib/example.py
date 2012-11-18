@@ -20,18 +20,18 @@ def main():
     search = requests.get( twitter['search'] )
 
     fav_list = [ tw['text'] for tw in favorites.json ]
-    search_list = [ tw['text'] for tw in search.json['results'] ][:2]
+    search_list = [ tw['text'] for tw in search.json['results'] ]
 
     fav_buffer = rec.stack.buffer( fav_list ); 
     fav_frequency = rec.filter.frequency( fav_buffer.getvalue() )
     fav_buffer.close()
 
-    result = rec.stack.choose(
+    result = rec.stack.filter(
         fav_frequency,
         search_list
     )
     
-    print result 
+    print join( result, '\n' )
 
 if __name__ == '__main__':
     main()
