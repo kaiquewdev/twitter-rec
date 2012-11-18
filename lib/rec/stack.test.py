@@ -20,6 +20,22 @@ class StackTestSuite( unittest.TestCase ):
             'result': 'text from a simple boy'
         })
 
+        self.case.append({
+            'frequency': filter.frequency(
+                'Simple text, boy simple'
+            ),
+            'stack': [
+                'simple recommendation',
+                'text from a simple boy',
+                'simple recommendation',
+                'text from a simple boy'
+            ],
+            'result': [
+                'text from a simple boy',
+                'text from a simple boy'
+            ]
+        })
+
     def test_stack_rec_fail( self ):
         self.assertEqual(
             stack.choose(),
@@ -89,6 +105,15 @@ class StackTestSuite( unittest.TestCase ):
                 ['#number1', '#number2'],
                 ['#number3'],
             ]
+        )
+
+    def test_stack_filtering( self ):
+        self.assertEqual(
+            stack.filter( 
+                self.case[1]['frequency'],
+                self.case[1]['stack']
+            ),
+            self.case[1]['result']
         )
 
 if __name__ == '__main__':

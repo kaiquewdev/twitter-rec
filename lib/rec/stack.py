@@ -71,3 +71,23 @@ class Stack( object ):
             return output
         except Exception:
             return output
+
+    def filter( self, frequency={}, stack=[] ):
+        output = []
+
+        try:
+            if frequency and stack:
+                import pdb; pdb.set_trace()
+                stack = self.slice(stack)
+
+                for slot in stack:
+                    output.append(
+                        self.choose(
+                            frequency,
+                            slot
+                        )
+                    )
+
+            return output
+        except Exception:
+            return output
